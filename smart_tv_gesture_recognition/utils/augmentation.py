@@ -1,1 +1,1 @@
-# Data augmentation script placeholder
+# Placeholder content for augmentation.py

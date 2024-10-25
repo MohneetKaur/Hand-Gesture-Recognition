@@ -1,1 +1,1 @@
-# Webcam capture script placeholder
+# Placeholder content for webcam_capture.py

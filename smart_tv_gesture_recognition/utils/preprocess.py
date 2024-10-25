@@ -1,1 +1,1 @@
-# Preprocessing script placeholder
+# Placeholder content for preprocess.py

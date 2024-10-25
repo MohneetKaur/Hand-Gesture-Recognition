@@ -1,1 +1,1 @@
-# Prediction script placeholder
+# Placeholder content for predict.py

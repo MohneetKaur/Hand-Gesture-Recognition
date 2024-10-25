@@ -1,1 +1,1 @@
-# Real-time gesture recognition script placeholder
+# Placeholder content for webcam_gesture.py

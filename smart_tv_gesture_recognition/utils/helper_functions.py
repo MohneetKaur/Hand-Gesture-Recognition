@@ -1,1 +1,1 @@
-# Helper functions placeholder
+# Placeholder content for helper_functions.py

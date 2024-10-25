@@ -1,1 +1,1 @@
-# Gesture-to-command mapping placeholder
+# Placeholder content for mapping.py

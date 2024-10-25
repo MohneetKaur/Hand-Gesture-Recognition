@@ -1,0 +1,1 @@
+# Placeholder content for artifact_entity.py

@@ -1,0 +1,9 @@
+torchvision
+joblib
+tqdm
+tensorflow==2.8.0
+opencv-python
+numpy
+keras
+selenium
+pyautogui
