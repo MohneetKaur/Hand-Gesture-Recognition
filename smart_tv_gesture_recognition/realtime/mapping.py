@@ -1,0 +1,1 @@
+# Gesture-to-command mapping placeholder

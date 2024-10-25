@@ -1,0 +1,1 @@
+# Real-time gesture recognition script placeholder
