@@ -1,0 +1,10 @@
+[ 2024-10-27 00:22:53,463 ] 37 root - INFO - Entered the run_pipeline method of TrainPipeline class
+[ 2024-10-27 00:22:53,464 ] 21 root - INFO - Entered the start_data_ingestion method of TrainPipeline class
+[ 2024-10-27 00:22:53,464 ] 23 root - INFO - Getting data from the S3 bucket
+[ 2024-10-27 00:22:53,464 ] 28 root - INFO - Entered the initiate_data_ingestion method of DataIngestion class
+[ 2024-10-27 00:22:53,464 ] 16 root - INFO - Enetered the get_data_from_s3 method of DataIngestion class
+[ 2024-10-27 00:24:30,163 ] 22 root - INFO - Exited the get_data_from_s3 method of DataIngestion class
+[ 2024-10-27 00:24:30,164 ] 35 root - INFO - Exited the initiate_data_ingestion method of DataIngestion class
+[ 2024-10-27 00:24:30,164 ] 26 root - INFO - Got train_set and test_set from S3 bucket
+[ 2024-10-27 00:24:30,164 ] 27 root - INFO - Exited the start_data_ingestion method of TrainPipeline class
+[ 2024-10-27 00:24:30,164 ] 43 root - INFO - Exited the run_pipeline method of TrainPipeline class
