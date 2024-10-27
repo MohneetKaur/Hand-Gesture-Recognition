@@ -1,10 +1,10 @@
 import sys
-from cloud_storage.s3_operations import S3Operation
-from utils.constants import *
-from entity.artifact_entity import DataIngestionArtifact
-from entity.config_entity import DataIngestionConfig
-from exception import HandException
-from logger import logging
+from smart_tv_gesture_recognition.cloud_storage.s3_operations import S3Operation
+from smart_tv_gesture_recognition.utils.constants import *
+from smart_tv_gesture_recognition.entity.artifact_entity import DataIngestionArtifact
+from smart_tv_gesture_recognition.entity.config_entity import DataIngestionConfig
+from smart_tv_gesture_recognition.exception import HandException
+from smart_tv_gesture_recognition.logger import logging
 
 class DataIngestion:
     def __init__(self, data_ingestion_config: DataIngestionConfig):

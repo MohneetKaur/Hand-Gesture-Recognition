@@ -1,7 +1,7 @@
 import logging
 import os
 
-from utils.constants import TIMESTAMP
+from smart_tv_gesture_recognition.utils.constants import TIMESTAMP
 
 LOG_FILE: str = f"{TIMESTAMP}.log"
 

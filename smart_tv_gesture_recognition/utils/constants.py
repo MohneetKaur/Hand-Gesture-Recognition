@@ -11,4 +11,4 @@ ARTIFACT_DIR: str = "artifacts"
 
 BUCKET_NAME: str = "handgesturerecognition"
 
-S3_DATA_FOLDER: str = "data"
+S3_DATA_FOLDER: str = "raw"

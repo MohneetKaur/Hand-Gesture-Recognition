@@ -1,11 +1,11 @@
 import sys
-from components.data_ingestion import DataIngestion
+from smart_tv_gesture_recognition.components.data_ingestion import DataIngestion
 
-from entity.artifact_entity import (
+from smart_tv_gesture_recognition.entity.artifact_entity import (
     DataIngestionArtifact
 )
 
-from entity.config_entity import (
+from smart_tv_gesture_recognition.entity.config_entity import (
     DataIngestionConfig
 )
 
