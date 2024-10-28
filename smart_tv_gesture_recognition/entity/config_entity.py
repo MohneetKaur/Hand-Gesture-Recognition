@@ -42,3 +42,20 @@ class DataTransformationConfig:
         self.artifact_dir: str = os.path.join(ARTIFACT_DIR, TIMESTAMP, "data_transformation")
         self.train_transforms_file: str = os.path.join(self.artifact_dir, TRAIN_TRANSFORMS_FILE)
         self.test_transforms_file: str = os.path.join(self.artifact_dir, TEST_TRANSFORMS_FILE)
+
+
+@dataclass
+class ModelTrainerConfig:
+    def __init__(self):
+        self.artifact_dir: str = os.path.join(ARTIFACT_DIR, TIMESTAMP, "model_training")
+        self.trained_model_path: str = os.path.join(self.artifact_dir,TRAINED_MODEL_NAME)
+        self.train_transforms_key: str = TRAIN_TRANSFORMS_KEY
+        self.epochs: int = EPOCH
+
+        # These values control how the model updates weights during training
+        self.optimizer_params: dict = {"lr":0.001, "momentum":0.8}
+
+        # step_size: the freq of adjustment & gamma:the factor by which th lr is multiplied each step
+        self.scheduler_params: dict = {"step_size": STEP_SIZE, "gamma": GAMMA} 
+
+        self.device: device = DEVICE

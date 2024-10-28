@@ -1,5 +1,6 @@
 from datetime import datetime
 from typing import List
+import torch
 
 import torchvision
 
@@ -44,3 +45,35 @@ BATCH_SIZE: int = 2
 SHUFFLE: bool = False
 
 PIN_MEMORY: bool = True
+
+# Model Trainer Constants
+
+TRAINED_MODEL_DIR: str = "trained_model"
+
+TRAINED_MODEL_NAME: str = "model.pt"
+
+DEVICE: torch.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+STEP_SIZE: int = 6
+
+GAMMA: int = 0.5
+
+EPOCH: int = 1
+
+PREDICTION_LABEL: dict = {
+    0: "right swipe",      # Maps to 'Next Video'
+    1: "left swipe",       # Maps to 'Previous Video'
+    2: "thumbs up",        # Maps to 'Volume Up'
+    3: "thumbs down",      # Maps to 'Volume Down'
+    4: "stop gesture"      # Maps to 'Play/Pause Toggle'
+}
+
+# Define the actions based on the gestures
+ACTIONS = {
+    "right swipe": "next_video",
+    "left swipe": "previous_video",
+    "thumbs up": "volume_up",
+    "thumbs down": "volume_down",
+    "stop gesture": "play_pause"
+}
+

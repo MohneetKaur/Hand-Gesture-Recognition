@@ -1,1 +1,0 @@
-# Placeholder content for helper_functions.py

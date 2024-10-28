@@ -1,1 +1,0 @@
-# Placeholder content for webcam_capture.py

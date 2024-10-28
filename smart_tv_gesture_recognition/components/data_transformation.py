@@ -6,6 +6,7 @@ import joblib
 from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms
 from torchvision.datasets import ImageFolder
+from torchvision.models import EfficientNet_B0_Weights
 
 from smart_tv_gesture_recognition.entity.config_entity import DataTransformationConfig
 
@@ -26,15 +27,21 @@ class DataTransformation:
         try:
             logging.info("Entered the transforming_training_data method of DataTransformation class")
 
+            # Load the weights object
+            weights = EfficientNet_B0_Weights.IMAGENET1K_V1
+
             train_transform: transforms.Compose = transforms.Compose(
                 [
                     transforms.Resize(self.data_transformation_config.RESIZE),
-                    transforms.CenterCrop(self.data_transformation_config.CENTERCROP),
+                    #transforms.CenterCrop(self.data_transformation_config.CENTERCROP),
                     transforms.ColorJitter(**self.data_transformation_config.color_jitter_transforms),
                     transforms.RandomHorizontalFlip(),
                     transforms.RandomRotation(self.data_transformation_config.RANDOMROTATION),
+                    transforms.RandomAffine(degrees=0, translate=(0.1, 0.1)),
                     transforms.ToTensor(),
-                    transforms.Normalize(**self.data_transformation_config.normalize_transforms)
+                    #transforms.Normalize(**self.data_transformation_config.normalize_transforms)
+                    transforms.Normalize(mean=weights.transforms().mean, std=weights.transforms().std)
+
 
                 ]
             )
@@ -50,12 +57,18 @@ class DataTransformation:
     def transforming_testing_data(self) -> transforms.Compose:
         logging.info("Entered the transforming_testing_data method of DataTransformation class")
         try:
+
+            # Load the weights object
+            weights = EfficientNet_B0_Weights.IMAGENET1K_V1
+
             test_transform: transforms.Compose = transforms.Compose(
                 [
                     transforms.Resize(self.data_transformation_config.RESIZE),
-                    transforms.CenterCrop(self.data_transformation_config.CENTERCROP),
+                    #transforms.CenterCrop(self.data_transformation_config.CENTERCROP),
                     transforms.ToTensor(),
-                    transforms.Normalize(**self.data_transformation_config.normalize_transforms)
+                    #transforms.Normalize(**self.data_transformation_config.normalize_transforms)
+                    transforms.Normalize(mean=weights.transforms().mean, std=weights.transforms().std) 
+
                 ]
             )
 
@@ -107,9 +120,7 @@ class DataTransformation:
                 test_transform_file_path=self.data_transformation_config.test_transforms_file
             )
 
-            logging.info(
-                "Exited the initiate_data_transformation method of Data transformation class"
-            )
+            logging.info("Exited the initiate_data_transformation method of Data transformation class")
 
             return data_transformation_artifact
 
